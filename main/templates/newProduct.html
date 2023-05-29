@@ -1,3 +1,7 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,12 @@
         {% csrf_token %}
         제목<br>
         <input type="text" name="postTitle"><br>
+        가격<br>
+        <input type="text" name="price"><br>
+        주소<br>
+        <input type="text" name="address"><br>
+        카테고리<br>
+        <input type="text" name="category"><br>
         내용<br>
         <textarea rows="10" cols="50" name="postContents"></textarea><br>
         <input type="file" name="productImage"><br>
@@ -18,3 +28,4 @@
     </form>
 </body>
 </html>
+{% endblock %}

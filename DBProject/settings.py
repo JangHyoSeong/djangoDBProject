@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     'main.apps.MainConfig',
     'user.apps.UserConfig',
 ]
@@ -128,6 +129,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static_root')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = '/media/'
+MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'user.User'
+LOGIN_REDIRECT_URL = '/'

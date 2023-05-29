@@ -21,12 +21,18 @@ def newProduct(request):
                 postTitle=request.POST['postTitle'],
                 postContents=request.POST['postContents'],
                 productImage=request.POST['productImage'],
+                price=request.POST['price'],
+                category=request.POST['category'],
+                address=request.POST['address'],
             )
         else:
             new_article=ProductPost.objects.create(
                 postTitle=request.POST['postTitle'],
                 postContents=request.POST['postContents'],
                 productImage=request.POST['productImage'],
+                price=request.POST['price'],
+                category=request.POST['category'],
+                address=request.POST['address'],
             )
         return redirect('/product/')
     return render(request, 'newProduct.html')
