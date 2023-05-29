@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+    <body>
+        <h1>게시판 페이지입니다</h1>
+
+        <table>
+            {% for list in productlist %}
+                <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
+                <ul>
+                    <li><a href="{{list.pk}}/">{{list.postTitle}}</a></li>
+                </ul>
+            {% endfor %}
+            </table>
+        <button><a href="newProduct/">글쓰기</a></button>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+.logo {
+    position: absolute;
+    left: 0;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 1;
+    color: #FF8A00;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.top {
+    border-bottom: 2px solid gray;
+    color: #FFFFFF;
+    grid-template-columns: 52fr 2fr 14fr;
+    display: grid; 
+    text-align: center;
+    padding: 3%;
+    padding-left: 5px;
+    padding-right: 11px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+
+    }
