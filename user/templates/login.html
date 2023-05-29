@@ -12,8 +12,8 @@
         <h1>로그인</h1>
         <form method="POST" action="{% url 'login' %}">
           {% csrf_token %}
+          {% include 'users/form_errors.html' %}
           ID : 
-          <input name="phone_number" type="text" value="">
           <br>
           <br>
           PW :
