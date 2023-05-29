@@ -2,7 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
-    UID = models.CharField(max_length = 20, primary_key=True)
+    UID = models.AutoField(primary_key=True)
     nickname = models.CharField(max_length=10, unique=True)
     phone_number = models.CharField(max_length=11, unique=True)
     password = models.CharField(max_length=15, default = '')
@@ -15,7 +15,7 @@ class User(models.Model):
 
 
 class ProductPost(models.Model):
-    product_ID = models.CharField(max_length = 20, primary_key=True)
+    product_ID = models.AutoField(primary_key=True)
     price = models.PositiveIntegerField(default = 0)
     address = models.CharField(max_length=100, null=True)
     category = models.CharField(max_length=10, null=True)
@@ -29,10 +29,10 @@ class ProductPost(models.Model):
 
     
 class ChatRoom(models.Model):
-    chatRoomID = models.CharField(max_length=20, primary_key=True)
+    chatRoomID = models.AutoField(primary_key=True)
 
 class Chat(models.Model):
-    chatID = models.CharField(max_length=20, primary_key=True)
+    chatID = models.AutoField(primary_key=True)
     contents = models.TextField()
     chatTime = models.DateTimeField()
     reading = models.BooleanField()
