@@ -1,19 +1,6 @@
 from django.db import models
 
 
-class User(models.Model):
-    UID = models.AutoField(primary_key=True)
-    nickname = models.CharField(max_length=10, unique=True)
-    phone_number = models.CharField(max_length=11, unique=True)
-    password = models.CharField(max_length=15, default = '')
-    email = models.CharField(max_length=40, unique=True)
-    address = models.CharField(max_length=100, null=True)
-
-    def __str__(self):
-        return self.nickname
-
-
-
 class ProductPost(models.Model):
     product_ID = models.AutoField(primary_key=True)
     price = models.PositiveIntegerField(default = 0)
