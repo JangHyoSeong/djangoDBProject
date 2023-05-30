@@ -41,6 +41,6 @@ class PurchaseHistory(models.Model):
     userID = models.ForeignKey(User, on_delete=models.CASCADE)
     postID = models.ForeignKey(ProductPost, on_delete=models.CASCADE)
 
-
+    
     
 

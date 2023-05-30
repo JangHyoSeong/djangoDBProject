@@ -1,9 +1,6 @@
 {% extends "nav.html" %}
 {% load static %}
 {% block content %}
-<head>
-  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-</head>
 
 <div class="container my-3">
     <form method="post" action="{% url 'users:login' %}">

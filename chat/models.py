@@ -5,6 +5,13 @@ from main.models import *
 class ChatRoom(models.Model):
     chatRoomID = models.AutoField(primary_key=True)
 
+
+class createChatRoom(models.Model):
+    chatRoomID = models.ForeignKey(ChatRoom, on_delete=models.CASCADE)
+    productID = models.ForeignKey(ProductPost, on_delete=models.CASCADE)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
 class Chat(models.Model):
     chatID = models.AutoField(primary_key=True)
     contents = models.TextField()

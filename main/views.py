@@ -14,6 +14,7 @@ def posting(request, pk):
     post = ProductPost.objects.get(pk=pk)
     return render(request, 'posting.html', {'post':post})
 
+
 def newProduct(request):
     if request.method == 'POST':
         if request.POST['productImage']:
@@ -25,6 +26,10 @@ def newProduct(request):
                 category=request.POST['category'],
                 address=request.POST['address'],
             )
+            new_upload=Upload.objects.create(
+                userID=request.user,
+                postID=new_article,
+            )
         else:
             new_article=ProductPost.objects.create(
                 postTitle=request.POST['postTitle'],
@@ -34,5 +39,21 @@ def newProduct(request):
                 category=request.POST['category'],
                 address=request.POST['address'],
             )
+            new_upload=Upload.objects.create(
+                userID=request.user,
+                postID=new_article,
+            )
         return redirect('/product/')
     return render(request, 'newProduct.html')
+
+
+def wishlist(request,pk):
+    post = ProductPost.objects.get(pk=pk)
+
+    if request.method=='POST':
+        new_wishlist=Wishlist.objects.create(
+            userID=request.user,
+            postID=post
+        )
+        return redirect('product')
+    return render(request, 'wishlist.html')

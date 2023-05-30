@@ -2,22 +2,9 @@
 {% load static %}
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyPage</title>
-</head>
+<a class="nav-link" href="{% url 'users:logout' %}">{{ user.username }} (로그아웃)</a>
+<p>{{user.nickname}}</p>
+<p>{{user.phone}}</p>
+<p>{{user.address}}</p>
 
-<body>
-
-    <a class="nav-link" href="{% url 'users:logout' %}">{{ user.username }} (로그아웃)</a>
-    <p>{{user.nickname}}</p>
-    <p>{{user.phone}}</p>
-    <p>{{user.address}}</p>
-
-</body>
-</html>
 {% endblock %}

@@ -1,21 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posting</title>
-</head>
-    <body>
-        <h1>개별 페이지</h1>
-        <p>{{post.postTitle}}</p>
-        <p>{{post.postContents}}</p>
-        <p>{{post.postTime}}</p>
-        <p>{{post.price}}</p>
-        {% if post.productImage %}
-        <img src = "{{ post.productImage.url }}" alt="" height="600">
-        <br>
-        {% endif %}
-        <a href="/product/">목록</a>
-    </body>
-</html>
+{% extends "nav.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container my-3">
+    <h1>개별 페이지</h1>
+    <p>{{post.postTitle}}</p>
+    <p>{{post.postContents}}</p>
+    <p>{{post.postTime}}</p>
+    <p>{{post.price}}</p>
+    {% if post.productImage %}
+    <img src = "{{ ost.productImage.url }}" alt="" height="600">
+    <br>
+    {% endif %}
+    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'product' %}'">목록으로</button>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="button" class="btn btn-primary" onclick="location.href='{% url 'chat:create_chatroom' post.pk %}'">채팅방 생성</button>
+    </form>
+    
+    
+</div>
+
+{% endblock %}
