@@ -39,6 +39,11 @@
             <input type="text" class="form-control" name="address" id="address"
                    value="{{ form.address.value|default_if_none:'' }}">
         </div>
+        <div class="mb-3">
+            <label for="profileImage">프로필사진</label>
+            <input type="file" class="form-control" name="profileImage" id="profileImage"
+                   value="{{ form.profileImage.value|default_if_none:'' }}">
+        </div>
         <button type="submit" class="btn btn-primary">생성하기</button>
     </form>
 </div>

@@ -9,7 +9,8 @@ class UserForm(UserCreationForm):
     phone=forms.CharField(max_length=11)
     nickname=forms.CharField(max_length=10)
     address=forms.CharField(max_length=200)
+    profileImage=forms.ImageField(required=False)
 
     class Meta:
         model = User
-        fields = ("username", "password1", "password2", "email", "phone", "nickname", "address")
+        fields = ("username", "password1", "password2", "email", "phone", "nickname", "address", "profileImage")

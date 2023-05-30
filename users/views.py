@@ -16,6 +16,7 @@ def signup(request):
             phone = form.cleaned_data['phone']
             nickname = form.cleaned_data['nickname']
             address = form.cleaned_data['address']
+            profileImage = form.cleaned_data['profileImage'],
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)  # 사용자 인증
