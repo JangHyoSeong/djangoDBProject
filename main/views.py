@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import *
 
+
+
 def home(request):
     return render(request, 'home.html')
 
@@ -46,14 +48,14 @@ def newProduct(request):
         return redirect('/product/')
     return render(request, 'newProduct.html')
 
-
-def wishlist(request,pk):
+def wishlist(request, pk):
     post = ProductPost.objects.get(pk=pk)
 
-    if request.method=='POST':
+    if request.method == 'POST':
         new_wishlist=Wishlist.objects.create(
             userID=request.user,
-            postID=post
+            postID=post,
         )
-        return redirect('product')
-    return render(request, 'wishlist.html')
+        return redirect('home')
+    return render(request, 'wishlist.html', {'wishlist': new_wishlist})
+

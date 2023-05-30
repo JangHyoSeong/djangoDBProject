@@ -13,9 +13,14 @@
     <br>
     {% endif %}
     <button type="button" class="btn btn-primary" onclick="location.href='{% url 'product' %}'">목록으로</button>
-    <form method="POST">
+    <form method="POST" action="{% url 'chat:create_chatroom' post.pk %}">
         {% csrf_token %}
-        <button type="button" class="btn btn-primary" onclick="location.href='{% url 'chat:create_chatroom' post.pk %}'">채팅방 생성</button>
+        <button type="submit" class="btn btn-primary">채팅방 생성</button>
+    </form>
+
+    <form method="POST" action="{% url 'wishlist' post.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">관심</button>
     </form>
     
     

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import *
+from main.models import Wishlist
 from django.contrib.auth.models import User
 from users.models import User
 from users.forms import UserForm

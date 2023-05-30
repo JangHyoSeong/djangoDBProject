@@ -11,7 +11,8 @@ urlpatterns = [
     path('product/', views.product, name='product'),
     path('product/<int:pk>/', views.posting, name='posting'),
     path('product/newProduct/', views.newProduct),
-    path('wishlist', views.wishlist, name='wishlist'),
+    path('wishlist/<str:userID>/', views.wishlist, name='wishlist'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
