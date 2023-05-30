@@ -20,6 +20,7 @@
                    value="{{ form.password.value|default_if_none:'' }}">
         </div>
         <button type="submit" class="btn btn-primary">로그인</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='{% url 'users:signup' %}'">회원가입</button>
     </form>
 </div>
 {% endblock %}

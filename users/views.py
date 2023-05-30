@@ -5,8 +5,9 @@ from users.models import User
 from users.forms import UserForm
 from django.contrib.auth import authenticate, login
 
-def mypage(request):
-    return render(request, 'users/mypage.html')
+def mypage(request, pk):
+    user = User.objects.get(pk=pk)
+    return render(request, 'users/mypage.html', {'user' : user})
 
 def signup(request):
     if request.method == "POST":

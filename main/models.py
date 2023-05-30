@@ -1,5 +1,5 @@
 from django.db import models
-
+from users.models import User
 
 class ProductPost(models.Model):
     product_ID = models.AutoField(primary_key=True)
