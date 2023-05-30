@@ -18,9 +18,9 @@
     <a href="{% url 'home' %}" class="home"><img src="{% static 'img/homeTap.svg' %}" alt=""></a>
     <a href="{% url 'product' %}" class="info"><img src="{% static 'img/infoTap.svg' %}" alt=""></a>
     {% if user.is_authenticated %}
-    <a href="{% url 'user:mypage' %}" class="my"><img src="{% static 'img/myTap.svg' %}" alt=""></a>
+    <a href="{% url 'users:mypage' %}" class="my"><img src="{% static 'img/myTap.svg' %}" alt=""></a>
     {% else %}
-    <a href="{% url 'user:login' %}" class="my"><img src="{% static 'img/myTap.svg' %}" alt=""></a>
+    <a href="{% url 'users:login' %}" class="my"><img src="{% static 'img/myTap.svg' %}" alt=""></a>
     {% endif %}
 </footer>
 </html>
