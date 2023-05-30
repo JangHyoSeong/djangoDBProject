@@ -9,3 +9,11 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+'''
+    다음 User 속성들은 django auth.models에서 기본 제공
+    username
+    password
+    email
+    Date joined
+'''
+

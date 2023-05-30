@@ -1,7 +1,9 @@
 from django.contrib import admin
-from .models import ProductPost, ChatRoom, Chat
+from .models import *
 
 
 admin.site.register(ProductPost)
-admin.site.register(ChatRoom)
-admin.site.register(Chat)
+admin.site.register(Upload)
+admin.site.register(Wishlist)
+admin.site.register(SalesHistory)
+admin.site.register(PurchaseHistory)

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'main.apps.MainConfig',
     'users.apps.UsersConfig',
+    'chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [
