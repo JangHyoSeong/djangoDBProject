@@ -18,8 +18,9 @@
     {% endif %}
   
     <p>가격: {{post.price}}원</p>
+    <p>카테고리 : {{post.category}}</p>
     <p>{{post.postContents}}</p>
-    <p>{{post.postTime}}</p>
+    
   
     <button type="button" class="btn btn-primary" onclick="location.href='{% url 'product' %}'">목록으로</button>
   

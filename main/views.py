@@ -56,6 +56,6 @@ def wishlist(request, pk):
             userID=request.user,
             postID=post,
         )
-        return redirect('home')
+        return redirect('product')
     return render(request, 'wishlist.html', {'wishlist': new_wishlist})
 

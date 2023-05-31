@@ -17,6 +17,7 @@
         <tr>
             <td><a href="{{list.pk}}/"><img src="/media/{{list.productImage}}" width="75" height="75"></a></td>
             <td><a href="{{list.pk}}/">{{list.postTitle}}</a></td>
+            <td>{{list.get_status_display }}</td>
         </tr>
         {% endfor %}
       </tbody>

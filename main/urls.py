@@ -11,7 +11,7 @@ urlpatterns = [
     path('product/', views.product, name='product'),
     path('product/<int:pk>/', views.posting, name='posting'),
     path('newProduct/', views.newProduct, name='newProduct'),
-    path('wishlist/<str:userID>/', views.wishlist, name='wishlist'),
+    path('wishlist/<int:pk>/', views.wishlist, name='wishlist'),
 
 ]
 
