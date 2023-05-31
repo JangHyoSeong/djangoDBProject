@@ -2,28 +2,36 @@
 {% load static %}
 {% block content %}
 
+<head>
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+</head>
+
+
 <div class="container my-3">
-    <h1>개별 페이지</h1>
-    <p>{{post.postTitle}}</p>
-    <p>{{post.postContents}}</p>
-    <p>{{post.postTime}}</p>
-    <p>{{post.price}}</p>
+    <h1>{{post.postTitle}}</h1>
+  
     {% if post.productImage %}
-    <img src = "{{ ost.productImage.url }}" alt="" height="600">
+    <div class="image-container">
+      <img src="{{ post.productImage.url }}" alt="" height="300" width="300">
+    </div>
     <br>
     {% endif %}
+  
+    <p>가격: {{post.price}}원</p>
+    <p>{{post.postContents}}</p>
+    <p>{{post.postTime}}</p>
+  
     <button type="button" class="btn btn-primary" onclick="location.href='{% url 'product' %}'">목록으로</button>
+  
     <form method="POST" action="{% url 'chat:create_chatroom' post.pk %}">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary">채팅방 생성</button>
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">채팅방 생성</button>
     </form>
-
+  
     <form method="POST" action="{% url 'wishlist' post.pk %}">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary">관심</button>
-    </form>
-    
-    
-</div>
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">관심</button>
+    </form><br><br><br>
+  </div>
 
 {% endblock %}

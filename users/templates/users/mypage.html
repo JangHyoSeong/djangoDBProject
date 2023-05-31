@@ -2,10 +2,23 @@
 {% load static %}
 {% block content %}
 
-<a class="nav-link" href="{% url 'users:logout' %}">{{ user.username }} (로그아웃)</a>
-<p>{{user.nickname}}</p>
-<p>{{user.phone}}</p>
-<p>{{user.address}}</p>
+<head>
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+</head>
+
+<div class="container my-3">
+    <h1>MyPage</h1>
+  
+    <p>닉네임 : {{user.nickname}}</p>
+    <p>전화번호 : {{user.phone}}</p>
+    <p>주소 : {{user.address}}</p>
+
+  
+    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'users:logout' %}'">로그아웃</button>
+  </div>
+
+
+
 
 
 

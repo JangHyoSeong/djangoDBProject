@@ -2,18 +2,29 @@
 {% load static %}
 {% block content %}
 
-    <body>
-        <h1>게시판 페이지입니다</h1>
+<head>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
 
-        <table>
-            {% for list in productlist %}
-                <!-- 게시글 클릭시 세부페이지로 넘어갑니다-->
-                <ul>
-                    <li><a href="{{list.pk}}/">{{list.postTitle}}</a></li>
-                </ul>
-            {% endfor %}
-            </table>
-        <button><a href="newProduct/">글쓰기</a></button>
-    </body>
+<div class = "title">물품 목록</div>
+
+
+  
+<div class="container">
+    <table>
+      <tbody>
+        {% for list in productlist %}
+        <tr>
+            <td><a href="{{list.pk}}/"><img src="/media/{{list.productImage}}" width="75" height="75"></a></td>
+            <td><a href="{{list.pk}}/">{{list.postTitle}}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>    
+  </div>
+
+<div class="button-container">
+  <button type="button" class="btn btn-primary" onclick="location.href='{% url 'newProduct' %}'">제품 등록</button>
+</div>
 
 {% endblock %}
