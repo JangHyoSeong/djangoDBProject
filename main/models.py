@@ -5,12 +5,12 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 class ProductPost(models.Model):
     product_ID = models.AutoField(primary_key=True)
-    price = models.PositiveIntegerField(default = 0)
-    address = models.CharField(max_length=100, null=True)
-    category = models.CharField(max_length=10, null=True)
     postTitle = models.CharField(max_length=30, default='')
-    postContents = models.TextField()
+    address = models.CharField(max_length=100, null=True)
+    postContents = models.TextField(max_length=100)
+    category = models.CharField(max_length=10, null=True)
     productImage = models.ImageField(blank=True, null=True)
+    price = models.PositiveIntegerField(default = 0)
 
     STATUS_CHOICE=(
         (0,'판매중'),
@@ -18,7 +18,7 @@ class ProductPost(models.Model):
         (2,'판매 완료'),
     )
     STATUS_SECTION = [MaxValueValidator(2),MinValueValidator(0)]
-    status = models.IntegerField(validators=STATUS_SECTION, choices = STATUS_CHOICE, default=0)
+    status = models.IntegerField(validators=STATUS_SECTION, choices = STATUS_CHOICE, default=0)   
 
     def __str__(self):
         return self.postTitle
@@ -40,6 +40,11 @@ class SalesHistory(models.Model):
 class PurchaseHistory(models.Model):
     userID = models.ForeignKey(User, on_delete=models.CASCADE)
     postID = models.ForeignKey(ProductPost, on_delete=models.CASCADE)
+
+class TradingReview(models.Model):
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
+    postID = models.ForeignKey(ProductPost, on_delete=models.CASCADE)
+    reviewRating = models.DecimalField(max_digits = 2, decimal_places = 1)
 
     
     

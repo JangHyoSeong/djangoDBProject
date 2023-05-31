@@ -4,5 +4,4 @@ from .models import *
 
 admin.site.register(ChatRoom)
 admin.site.register(Chat)
-admin.site.register(createChatRoom)
 

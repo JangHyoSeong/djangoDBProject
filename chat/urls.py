@@ -9,7 +9,6 @@ app_name = 'chat'
 
 urlpatterns = [
     path('chatroom/<int:pk>/', views.chatroom, name='chatroom'),
-    path('create_chatroom/<int:pk>/', views.create_chatroom, name='create_chatroom'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
