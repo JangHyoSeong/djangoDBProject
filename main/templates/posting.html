@@ -24,7 +24,7 @@
   
     <button type="button" class="btn btn-primary" onclick="location.href='{% url 'product' %}'">목록으로</button>
   
-    <form method="POST" action="{% url 'chat:create_chatroom' post.pk %}">
+    <form method="POST" action="{% url 'chat:chatroom' post.pk %}">
       {% csrf_token %}
       <button type="submit" class="btn btn-primary">채팅방 생성</button>
     </form>
